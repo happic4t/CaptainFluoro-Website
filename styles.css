@@ -149,7 +149,7 @@ nav a.ghost-button:hover, nav a.ghost-button:active {
 /* =========== BANNER SECTION =========== */
 /* Banner section with a background image and a slightly transparent banner */
 #banner {
-    background: url('_images/img_background.jpg') no-repeat center center;
+    background: url('./images/img_background.jpg') no-repeat center center;
     background-size: cover;
     padding: 20px;
     margin-top: 10px;
