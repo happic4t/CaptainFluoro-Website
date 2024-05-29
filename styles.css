@@ -63,7 +63,7 @@ a:visited {
 
 /* Box styling for a consistent look */
 .box-full {
-    border: 3px solid #fff;
+    border: 3px solid #fff; /* Applies a 3px solid white (#fff) border */
     border-radius: 6px;
     background: rgba(255, 255, 255, 0.3);
     text-align: center;
@@ -103,6 +103,7 @@ nav {
     position: sticky;
     top: 0;
     background-color: #1b1f1f; /* Background color to match the ghost buttons */
+    border: 3px solid #fff;
     border-radius: 6px;
     padding: 10px 20px;
     z-index: 1000; /* Ensures nav stays on top */
@@ -148,6 +149,13 @@ nav a.ghost-button:hover, nav a.ghost-button:active {
 
 /* =========== BANNER SECTION =========== */
 /* Banner section with a background image and a slightly transparent banner */
+/* New one for me! The box-shadow property adds a shadow effect
+   - 0px: Horizontal offset, meaning the shadow does not shift horizontally.
+   - 4px: Vertical offset, making the shadow appear 4px below the element.
+   - 8px: Blur radius, controlling the blur amount of the shadow.
+   - rgba(0, 0, 0, 0.3): Shadow color, which is black with 90% opacity */
+
+
 #banner {
     background: url('./images/img_background.jpg') no-repeat center center;
     background-size: cover;
@@ -155,15 +163,15 @@ nav a.ghost-button:hover, nav a.ghost-button:active {
     margin-top: 10px;
     margin-bottom: 20px;
     text-align: center; /* Centers content inside the banner */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.9);
 }
 
 #banner img {
     display: block;
     margin: 0 auto; /* Centers the image */
     height: 200px;
+    filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.9)); /* Adds a shadow JUST to the SVG image */
 }
-
-
 
 /* =========== PROFILE SECTION =========== */
 /* Styling for the profile section */
@@ -186,6 +194,7 @@ nav a.ghost-button:hover, nav a.ghost-button:active {
     text-align: center; /* Center text */
     margin-bottom: 20px;
 }
+
 #profile-about aside {
     margin-bottom: 20px; /* Space between image and text */
 }
@@ -196,13 +205,14 @@ nav a.ghost-button:hover, nav a.ghost-button:active {
 
 /* Styling our animated gradient text */
 .animated-gradient {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 2em;
-  background: linear-gradient(270deg, #ff4b59, #ff9057, #ffc764, #50e3c2, #4a90e2, #b8e986, #ff4b59);
-  background-size: 200%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: gradient 10s ease-in-out infinite;
+    font-family: 'Open Sans', sans-serif; /* Sets the font family */
+    font-size: 2em; /* Sets the font size to 2em */
+    background: linear-gradient(270deg, #ff4b59, #ff9057, #ffc764, #50e3c2, #4a90e2, #b8e986, #ff4b59); /* Sets a linear gradient background */
+    background-size: 200%; /* Sets the background size to 200% for smooth animation */
+    -webkit-background-clip: text; /* Clips the background to the text (for WebKit browsers) */
+    -webkit-text-fill-color: transparent; /* Makes text color transparent (for WebKit browsers) */
+    animation: gradient 10s ease-in-out infinite; /* Applies an animation to the background gradient */
+    text-shadow: 2px 4px 1px rgba(0, 0, 0, 0.1); /* Adds a shadow to the text */
 }
 
 /* Ensures the buttons are aligned on the right and displayed in rows */
@@ -452,6 +462,11 @@ nav a.ghost-button:hover, nav a.ghost-button:active {
 
 #customer-testimonials .box-full p {
     margin: 5px 0;
+}
+
+/* Aligns the rating stars to the right */
+#customer-testimonials .rating {
+    text-align: right;
 }
 
 /* =========== FIND US SECTION =========== */
@@ -708,7 +723,6 @@ footer li.grow:hover {
     #left-right article, #right-left article {
         padding: 0 20px 20px 20px; /* Padding around the text */
     }
-}
 }
 
 /* Media query for screens larger than 1000px */
